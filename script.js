@@ -14,6 +14,7 @@ function add_task() {
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
+        saveData()
     }
     InputBox.value = "";
 }
@@ -23,9 +24,12 @@ NewTask.addEventListener ("click", function(c)
     {        
     if(c.target.tagName === "LI"){
         c.target.classList.toggle("checked");
+        saveData()
     }
+    
     else if(c.target.tagName === "SPAN"){
         c.target.parentElement.remove();
+        saveData()
     }
     
 })
@@ -35,6 +39,15 @@ InputBox.addEventListener ("keypress", function(e) {
     if (e.key === "Enter") {
         e.preventDefault();
         document.getElementById("button").click();
+        saveData()
     }
 }
 )
+
+function saveData() {
+    localStorage.setItem("data", NewTask.innerHTML);
+    }
+function showData() {
+    NewTask.innerHTML = localStorage.getItem("data");
+    }
+showData();
