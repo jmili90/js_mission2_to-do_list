@@ -15,9 +15,9 @@
     background-color: #19434e;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
 }
+
 #to-do_block {
     width: 500px;
     height: 700PX;
@@ -25,8 +25,8 @@
     padding: 20px;
     border-radius: 30px;
     box-shadow: 3px 3px 30px #0d292f;
-    
 }
+
 #title {
     display: flex;
     gap: 10px;
@@ -42,11 +42,12 @@
 
 #typing_area {
     display: flex;
-border-radius: 40px;
-background-color: #f5f6fa;
-font-size: 40px;
-height: 50px;
+    border-radius: 40px;
+    background-color: #f5f6fa;
+    font-size: 40px;
+    height: 50px;
 }
+
 #input_box {
     flex: 1;
     background: transparent;
@@ -54,8 +55,8 @@ height: 50px;
     outline: none;
     padding-left: 20px;
     font-size: large;
-   
 }
+
 #button {
     background-color: #70bc80;
     border-radius: 40px;
@@ -72,7 +73,9 @@ height: 50px;
 }
 #ul_tasks {
     padding: 30px;   
-    font-size: 22px;    
+    font-size: 22px;  
+    overflow-y: scroll;
+        height: 58vh;   
 }
 #ul_tasks li {
    
@@ -107,11 +110,17 @@ span:hover {
     opacity: 50%;    
 }
 
+
 /* Responsive  */
  @media screen and (max-width: 1000px) {
     #to-do_block {
         width: 100%;
         height: auto;
+        max-height: 95vh;
         
     }    
+    #ul_tasks {
+        
+        height: 72vh; 
+    }
  }
